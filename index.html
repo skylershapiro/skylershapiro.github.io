@@ -1,138 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skyler Shapiro</title>
-    <style>
-        body {
-            font-family: Helvetica, sans-serif;
-            margin: 20px;
-        }
-        .container {
-            display: flex;
-        }
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            border: 1px solid #ddd;
-            width: 250px;
-            margin-right: 20px;
-        }
-        .sidebar img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
-        .sidebar h2 {
-            margin: 10px 0 5px 0;
-        }
-        .sidebar p {
-            text-align: center;
-            margin: 5px 0;
-        }
-        .sidebar .location {
-            display: flex;
-            align-items: center;
-            margin: 10px 0;
-        }
-        .sidebar .location img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-        .sidebar .contact {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0;
-            text-align: center;
-        }
-        .sidebar .contact li {
-            margin: 5px 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .sidebar .contact li img {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-        .sidebar .contact a {
-            text-decoration: none;
-            color: #007acc;
-        }
-        .content {
-            max-width: 800px;
-            width: 100%;
-        }
-        .conference {
-            margin-top: 30px;
-        }
-        .conference h2 {
-            margin-bottom: 10px;
-        }
-        .conference .paper {
-            margin-bottom: 10px;
-        }
-        .conference .paper a {
-            text-decoration: none;
-            color: #007acc;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="sidebar">
-            <img src="profile.jpg">
-            <h2>Skyler Shapiro</h2>
-            <p>stats and ml.</p>
-            <div class="location">
-                <img src="location-icon.png" alt="Location Icon">
-                <span>Durham, NC</span>
-            </div>
-            <ul class="contact">
-                <li>
-                    <img src="email-icon.png" alt="Email Icon">
-                    <a href="mailto:email">skyler.shapiro@duke.edu</a>
-                </li>
-                <li>
-                    <img src="Google_Scholar_logo.svg.png" alt="Google Scholar Icon">
-                    <a href="https://scholar.google.com/citations?user=dGSrRTYAAAAJ&hl=en">Google Scholar</a>
-                </li>
-                <li>
-                    <img src="linkedin-icon.png" alt="LinkedIn Icon">
-                    <a href="https://www.linkedin.com/in/skylershapiro/">LinkedIn</a>
-                </li>
-            </ul>
-        </div>
-        <div class="content">
-            <div class="profile">
-                <img src="profile.jpg" alt="" width="100" height="100">
-                <div class="info">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skyler Shapiro | Biostatistics PhD</title>
 
-                    <p>inspiring bio.</p>
-                    <ul class="contact">
-                        <li>Boston, MA</li>
-                        <li><a href="https://scholar.google.com/citations?user=dGSrRTYAAAAJ&hl=en">Google Scholar</a></li>
-                        <li><a href="https://www.linkedin.com/in/skylershapiro/">LinkedIn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <p> Hi! I'm a rising senior at Cornell University studying statistics and computer science. I'm also a researcher at the Laboratory of Systems Pharmacology at Harvard Medical School advised by Dr. Mark Albers as well as the Lab for Computational Physiology at Massachusetts Institute of Technology advised by Dr. Leo Celi.</p>
-            <p>I am currently investigating blahblahblah</p>
-            
-            <div class="conference">
-                <h2>Conference</h2>
-                <div class="paper">
-                    <p><strong>Paper Title</strong><br>
-                    Author1, Author2<br>
-                    <em>Nature, 2026</em>, <a href="https://google.comz">[paper]</a></p>
-                </div>
-            </div>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #003366;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Navigation Bar */
+    nav {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .name {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--accent);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* Layout */
+    main {
+      max-width: 900px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.4rem;
+    }
+
+    /* About Card */
+    .about-card {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+      background-color: #fafafa;
+    }
+
+    .about-card img {
+      width: 110px;
+      height: 110px;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    .about-card p {
+      color: var(--muted);
+    }
+
+    /* Lists */
+    ul.simple-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul.simple-list li {
+      margin-bottom: 0.75rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .about-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="name">Skyler Shapiro</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#academic">Academic</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- About -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-card">
+        <img src="profile.jpg" alt="Profile photo">
+        <div>
+          <p>
+            I am a first-year PhD student in Biostatistics at Duke University.
+            My research interests include causal inference, clinical trial
+            emulation using observational data, and statistical machine learning
+            for biomedical applications.
+          </p>
+          <p>
+            <strong>Email:</strong> your.email@duke.edu<br>
+            <strong>CV:</strong> <a href="cv.pdf">Download PDF</a>
+          </p>
         </div>
-    </div>
+      </div>
+    </section>
+
+    <!-- Academic -->
+    <section id="academic">
+      <h2>Academic</h2>
+      <ul class="simple-list">
+        <li><strong>PhD, Biostatistics</strong> — Duke University (2025–present)</li>
+        <li><strong>MS / BS</strong> — University Name</li>
+        <li>Research areas: causal inference, observational studies, ML</li>
+      </ul>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Publications</h2>
+      <ul class="simple-list">
+        <li>
+          Shapiro, S., et al. (Year). <em>Title of Paper</em>.
+          Journal Name.
+        </li>
+        <li>
+          Working papers and preprints forthcoming.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Teaching -->
+    <section id="teaching">
+      <h2>Teaching</h2>
+      <ul class="simple-list">
+        <li>Teaching Assistant — Course Name, Duke University</li>
+        <li>Guest lectures in statistical computing</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Skyler Shapiro · Duke University
+  </footer>
+
 </body>
 </html>
