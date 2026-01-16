@@ -1,207 +1,310 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skyler Shapiro | Biostatistics PhD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skyler Shapiro | Biostatistics PhD Student</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Modern Academic Theme Variables */
+        :root {
+            --primary-blue: #1d4ed8;
+            --primary-hover: #1e40af;
+            --slate-900: #0f172a;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --bg-gradient: linear-gradient(180deg, #eef2f9, #f8fbff 45%, #fff);
+            --glass-bg: rgba(239, 244, 252, 0.85);
+            --border-light: rgba(15, 23, 42, 0.08);
+        }
 
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #003366;
-      --border: #e5e7eb;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Roboto, Helvetica, Arial, sans-serif;
-    }
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            line-height: 1.6;
+            color: var(--slate-900);
+            background: var(--bg-gradient);
+            min-height: 100vh;
+        }
 
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
+        #root {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
 
-    /* Navigation Bar */
-    nav {
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        /* Modern Glassmorphic Nav */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 0;
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--border-light);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
 
-    nav .name {
-      font-weight: 600;
-      font-size: 1.1rem;
-      color: var(--accent);
-    }
+        .nav__logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--slate-900);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
+        .nav__links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
 
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 500;
-    }
+        .nav__link {
+            color: var(--slate-600);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
 
-    nav a:hover {
-      color: var(--accent);
-    }
+        .nav__link:hover {
+            color: var(--primary-blue);
+        }
 
-    /* Layout */
-    main {
-      max-width: 900px;
-      margin: 2.5rem auto;
-      padding: 0 1.5rem;
-    }
+        /* Hero Section / About */
+        .hero {
+            padding: 4rem 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
 
-    section {
-      margin-bottom: 3rem;
-    }
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 16px;
+            object-fit: cover;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border: 4px solid white;
+        }
 
-    section h2 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid var(--border);
-      padding-bottom: 0.4rem;
-    }
+        .hero__eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
 
-    /* About Card */
-    .about-card {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.5rem;
-      background-color: #fafafa;
-    }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
 
-    .about-card img {
-      width: 110px;
-      height: 110px;
-      border-radius: 6px;
-      object-fit: cover;
-    }
+        .hero__lead {
+            font-size: 1.15rem;
+            color: var(--slate-600);
+            max-width: 60ch;
+            margin-bottom: 2rem;
+        }
 
-    .about-card p {
-      color: var(--muted);
-    }
+        /* Action Buttons */
+        .hero__actions {
+            display: flex;
+            gap: 1rem;
+        }
 
-    /* Lists */
-    ul.simple-list {
-      list-style: none;
-      padding-left: 0;
-    }
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
 
-    ul.simple-list li {
-      margin-bottom: 0.75rem;
-    }
+        .button--primary {
+            background: var(--primary-blue);
+            color: white;
+        }
 
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.5rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+        .button--primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
 
-    /* Responsive */
-    @media (max-width: 600px) {
-      .about-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-    }
-  </style>
+        .button--ghost {
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .button--ghost:hover {
+            background: rgba(29, 78, 216, 0.05);
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 0;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .section h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--slate-900);
+        }
+
+        .content-list {
+            list-style: none;
+        }
+
+        .content-item {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .content-item__label {
+            font-weight: 600;
+            color: var(--slate-500);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .content-item__text strong {
+            display: block;
+            color: var(--slate-900);
+            font-size: 1.1rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-light);
+            text-align: center;
+            color: var(--slate-500);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                justify-items: center;
+            }
+            .content-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="name">Skyler Shapiro</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#academic">Academic</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#teaching">Teaching</a></li>
-    </ul>
-  </nav>
+    <div id="root">
+        <nav class="nav">
+            <a href="#" class="nav__logo">Skyler Shapiro</a>
+            <ul class="nav__links">
+                <li><a href="#about" class="nav__link">About</a></li>
+                <li><a href="#academic" class="nav__link">Academic</a></li>
+                <li><a href="#publications" class="nav__link">Publications</a></li>
+                <li><a href="#teaching" class="nav__link">Teaching</a></li>
+            </ul>
+        </nav>
 
-  <main>
+        <header id="about" class="hero">
+            <img src="profile.jgp" alt="Skyler Shapiro" class="profile-img">
+            <div class="hero__content">
+                <p class="hero__eyebrow">PhD Student · Biostatistics · Duke University</p>
+                <h1>Skyler Shapiro</h1>
+                <p class="hero__lead">
+                    I am a first-year PhD student in Biostatistics at Duke University. My research interests include <strong>causal inference</strong>, <strong>clinical trial emulation</strong> using observational data, and <strong>statistical machine learning</strong> for biomedical applications.
+                </p>
+                <div class="hero__actions">
+                    <a href="mailto:skyler.shapiro@duke.edu" class="button button--primary">Email Me</a>
+                    <a href="cv.pdf" class="button button--ghost">Download CV</a>
+                </div>
+            </div>
+        </header>
 
-    <!-- About -->
-    <section id="about">
-      <h2>About Me</h2>
-      <div class="about-card">
-        <img src="profile.jpg" alt="Profile photo">
-        <div>
-          <p>
-            I am a first-year PhD student in Biostatistics at Duke University.
-            My research interests include causal inference, clinical trial
-            emulation using observational data, and statistical machine learning
-            for biomedical applications.
-          </p>
-          <p>
-            <strong>Email:</strong> your.email@duke.edu<br>
-            <strong>CV:</strong> <a href="cv.pdf">Download PDF</a>
-          </p>
-        </div>
-      </div>
-    </section>
+        <main>
+            <section id="academic" class="section">
+                <h2>Academic Background</h2>
+                <div class="content-list">
+                    <div class="content-item">
+                        <span class="content-item__label">2025 — Present</span>
+                        <div class="content-item__text">
+                            <strong>PhD in Biostatistics</strong>
+                            Duke University
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <span class="content-item__label">Previous Degree</span>
+                        <div class="content-item__text">
+                            <strong>MS / BS</strong>
+                            University Name
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Academic -->
-    <section id="academic">
-      <h2>Academic</h2>
-      <ul class="simple-list">
-        <li><strong>PhD, Biostatistics</strong> — Duke University (2025–present)</li>
-        <li><strong>MS / BS</strong> — University Name</li>
-        <li>Research areas: causal inference, observational studies, ML</li>
-      </ul>
-    </section>
+            <section id="publications" class="section">
+                <h2>Publications</h2>
+                <div class="content-list">
+                    <div class="content-item">
+                        <span class="content-item__label">Selected Research</span>
+                        <div class="content-item__text">
+                            <strong>Shapiro, S., et al. (Year). Title of Paper.</strong>
+                            <em>Journal Name.</em>
+                        </div>
+                    </div>
+                    <div class="content-item">
+                        <span class="content-item__label">In Progress</span>
+                        <div class="content-item__text">
+                            Working papers and preprints forthcoming in causal inference and ML.
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Publications -->
-    <section id="publications">
-      <h2>Publications</h2>
-      <ul class="simple-list">
-        <li>
-          Shapiro, S., et al. (Year). <em>Title of Paper</em>.
-          Journal Name.
-        </li>
-        <li>
-          Working papers and preprints forthcoming.
-        </li>
-      </ul>
-    </section>
+            <section id="teaching" class="section">
+                <h2>Teaching</h2>
+                <ul class="content-list">
+                    <li class="content-item">
+                        <span class="content-item__label">Duke University</span>
+                        <div class="content-item__text">
+                            <strong>Teaching Assistant</strong>
+                            Course Name · Statistical Computing & Guest Lectures
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
 
-    <!-- Teaching -->
-    <section id="teaching">
-      <h2>Teaching</h2>
-      <ul class="simple-list">
-        <li>Teaching Assistant — Course Name, Duke University</li>
-        <li>Guest lectures in statistical computing</li>
-      </ul>
-    </section>
-
-  </main>
-
-  <footer>
-    © 2026 Skyler Shapiro · Duke University
-  </footer>
+        <footer>
+            <p>© 2026 Skyler Shapiro · Duke University Biostatistics</p>
+        </footer>
+    </div>
 
 </body>
 </html>
