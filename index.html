@@ -110,7 +110,15 @@
             line-height: 1.75;
         }
         .hero__lead strong { color: var(--ink); font-weight: 600; }
-
+.duke-icon {
+    width: 16px !important;  /* Match your other icon sizes */
+    height: 16px !important;
+    border-radius: 4px;      /* This creates the rounded "square" look */
+    object-fit: cover;       /* Ensures the SVG fills the square area */
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #fff;  /* Optional: adds a white background if the SVG is transparent */
+}
         /* Social row */
         .social-row { display: flex; gap: 0.65rem; flex-wrap: wrap; align-items: center; }
         .social-pill {
@@ -390,7 +398,7 @@
     ORCID
 </a>
 <a href="https://scholars.duke.edu/person/Skyler.Shapiro" class="social-pill" title="Scholars@Duke" target="_blank" rel="noopener">
-    <img src="scholar_duke.svg" alt="Scholars@Duke" style="width:14px; height:14px; opacity: 0.6;">
+    <img src="scholar_duke.svg" alt="Scholars@Duke" class="duke-icon" style="width:14px; height:14px; opacity: 0.8;">
     Scholars@Duke
 </a>
             </div>
