@@ -21,6 +21,11 @@ a {
   font-weight: normal;
   text-decoration: none; 
   color:#EF6D3D;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+a:hover {
+  color: #FF8A5B; /* slightly lighter orange */
+  opacity: 0.9;
 }
 a:focus {
   outline: thin dotted;
@@ -101,7 +106,8 @@ body {
   margin:25px auto;
 }
 header, #content, footer { 
-  background: rgba(0,0,0,.8); 
+  background: rgba(20, 20, 20, 0.75);
+  backdrop-filter: blur(6px);
   padding:25px;
   color:#FFFFFF; 
 }
