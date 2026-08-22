@@ -27,67 +27,49 @@
             background: var(--bg);
             color: var(--text);
             line-height: 1.5;
-            font-size: 14px;
+            font-size: 24px;
         }
-
-        /* NAV */
-        .nav {
-            position: sticky; top: 0; z-index: 200;
-            background: var(--bg);
-            padding: 0.75rem 2rem;
-            display: flex; align-items: center; justify-content: space-between;
-        }
-        .nav__logo {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text);
-            text-decoration: none;
-        }
-        .nav__links { display: flex; gap: 1.5rem; list-style: none; }
-        .nav__link {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-        .nav__link:hover { color: var(--text); }
 
         /* LAYOUT */
         .page { max-width: 1000px; margin: 0 auto; padding: 2rem 2rem 3rem; }
 
-        /* HERO */
+        /* HERO - Centered */
         .hero {
-            display: grid;
-            grid-template-columns: 120px 1fr;
-            gap: 2rem;
-            margin-bottom: 7rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+            margin-bottom: 5rem;
         }
         .hero__photo {
-            width: 130px; height: 130px;
+            width: 150px; height: 150px;
             object-fit: cover;
-            object-position: 0 -35px;
+            object-position: 0 -25px;
         }
         .hero__tag {
-            font-size: 0.8rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 0.4rem;
+            margin-bottom: 2rem;
         }
         .hero h1 {
-            font-size: 1.75rem;
+            font-size: 2rem;
             font-weight: 600;
             line-height: 1.2;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.4rem;
             letter-spacing: -0.02em;
         }
         .hero__lead {
-            font-size: 0.9rem;
+            font-size: 1.2rem;
             color: var(--text);
+            text-align: left;
             max-width: 60ch;
             margin-bottom: 1rem;
             line-height: 1.6;
         }
         .hero__lead strong { font-weight: 600; }
 
-        .social-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+        .social-row { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
         .social-pill {
             font-size: 0.75rem;
             color: var(--text-muted);
@@ -111,10 +93,10 @@
         /* SECTIONS */
         .section { margin-bottom: 2.5rem; }
         .section__title {
-            font-size: 1.15rem;
+            font-size: 2rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 1rem;
+            margin-bottom: 0.4rem;
             letter-spacing: -0.01em;
         }
 
@@ -132,20 +114,20 @@
             line-height: 1.4;
         }
         .trow__title {
-            font-size: 0.9rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--text);
             margin-bottom: 0.2rem;
         }
         .trow__sub {
-            font-size: 0.8rem;
+            font-size: 1.1rem;
             color: var(--text-muted);
             margin-bottom: 0.4rem;
         }
         .trow__desc {
-            font-size: 0.825rem;
+            font-size: 1.1rem;
             color: var(--text);
-            line-height: 1.55;
+            line-height: 1.5;
         }
         .skill-tags {
             display: flex; flex-wrap: wrap; gap: 0.35rem;
@@ -170,10 +152,10 @@
             padding: 0.8rem 0;
         }
         .pub-title {
-            font-size: 0.875rem;
+            font-size: 1rem;
             font-weight: 600;
             color: var(--text);
-            margin-bottom: 0.3rem;
+            margin-bottom: 0rem;
             line-height: 1.35;
         }
         .pub-meta {
@@ -225,19 +207,19 @@
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
-            .nav { padding: 0.75rem 1rem; }
-            .nav__links { gap: 1rem; }
             .page { padding: 1.5rem 1rem 2rem; }
-            .hero { grid-template-columns: 1fr; gap: 1rem; }
-            .hero__photo { width: 100px; height: 100px; }
-            .hero h1 { font-size: 1.5rem; }
+            .hero { gap: 1rem; margin-bottom: 3rem; }
+            .hero__photo { width: 120px; height: 120px; }
+            .hero h1 { font-size: 1.75rem; }
+            .hero__tag { font-size: 1.2rem; }
+            .hero__lead { font-size: 1.1rem; }
             
             .two-col-layout { 
                 grid-template-columns: 1fr; 
                 gap: 2rem;
             }
-            .col-right { order: 1; }
-            .col-left { order: 2; }
+            .col-left { order: 1; }
+            .col-right { order: 2; }
             
             .trow { grid-template-columns: 1fr; gap: 0.3rem; }
         }
@@ -266,24 +248,14 @@
 </head>
 <body>
 
-<nav class="nav">
-    <a href="#" class="nav__logo">Skyler Shapiro</a>
-    <ul class="nav__links">
-        <li><a href="#about" class="nav__link">About</a></li>
-        <li><a href="#experience" class="nav__link">Experience</a></li>
-        <li><a href="#publications" class="nav__link">Publications</a></li>
-        <li><a href="#teaching" class="nav__link">Teaching</a></li>
-    </ul>
-</nav>
-
 <div class="page">
 
-    <!-- HERO -->
+    <!-- HERO (Centered) -->
     <header id="about" class="hero">
         <img src="profile.jpg" alt="Skyler Shapiro" class="hero__photo">
         <div>
-            <p class="hero__tag">PhD Student · Biostatistics · Duke University</p>
             <h1>Skyler Shapiro</h1>
+             <p class="hero__tag">PhD Student · Biostatistics · Duke University</p>
             <p class="hero__lead">
                 I'm a first-year PhD student in Biostatistics at Duke University. My research focuses on <strong>causal inference</strong>, 
                 <strong>clinical trial emulation</strong>, and <strong>machine learning</strong> for health data. 
@@ -312,77 +284,8 @@
 
     <main class="two-col-layout">
 
-        <!-- LEFT COLUMN: Publications, Teaching -->
+        <!-- LEFT COLUMN: Experience, Teaching -->
         <div class="col-left">
-            
-            <section id="publications" class="section">
-                <h2 class="section__title">Publications</h2>
-                <div class="pub-list">
-                    <div class="pub-item">
-                        <div class="pub-title">A pilot study evaluating mid-point vancomycin concentrations to estimate pharmacokinetics and area under the curve: a prospective study</div>
-                        <div class="pub-meta">Aseel AbuSara, Deema Abdelrahman, Wedad Awad, Jennifer Le, Skyler Shapiro, Lama Nazer · <span class="pub-journal">BMC Infectious Diseases</span> · 2025</div>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1186/s12879-025-11469-2" class="pub-link" target="_blank" rel="noopener">PDF</a>
-                            <button class="pub-abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
-                        </div>
-                        <div class="pub-abstract">An evaluation of single mid-interval vancomycin concentrations in critically ill cancer patients, assessing their ability to estimate AUC24, clearance, and volume of distribution compared to Bayesian peak–trough methods, and suggesting a simpler alternative for therapeutic drug monitoring.</div>
-                    </div>
-                    <div class="pub-item">
-                        <div class="pub-title">HLSTransform: Energy-Efficient Llama 2 Inference on FPGAs Via High Level Synthesis</div>
-                        <div class="pub-meta">Andy He*, Darren Key*, Mason Bulling*, Andrew Chang*, Skyler Shapiro*, Everett Lee · <span class="pub-journal">ICML 2024 Workshop</span></div>
-                        <div class="pub-links">
-                            <a href="https://icml.cc/virtual/2024/39603" class="pub-link" target="_blank" rel="noopener">Page</a>
-                            <a href="https://doi.org/10.48550/arXiv.2405.00738" class="pub-link" target="_blank" rel="noopener">PDF</a>
-                            <button class="pub-abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
-                        </div>
-                        <div class="pub-abstract">HLSTransform is an open-source FPGA accelerator for Llama 2 that leverages High-Level Synthesis and 8-bit quantization to achieve an 8.25x reduction in energy per token compared to a GPU while maintaining 53% of its inference speed, demonstrating a high-efficiency alternative for LLM deployment on edge hardware.</div>
-                    </div>
-                    <div class="pub-item">
-                        <div class="pub-title">Patient diversity and author representation in clinical studies supporting the Surviving Sepsis Campaign guidelines</div>
-                        <div class="pub-meta">Lama Nazer, Aseel Abusara, Batoul Aloran, et al. · <span class="pub-journal">BMC Infectious Diseases</span> · 2023</div>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1186/s12879-023-08745-4" class="pub-link" target="_blank" rel="noopener">PDF</a>
-                            <button class="pub-abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
-                        </div>
-                        <div class="pub-abstract">A systematic review assessing the generalizability of the Surviving Sepsis Campaign 2021 guidelines by examining racial, sex, and geographic diversity of patients enrolled in supporting clinical studies, as well as demographic representation among authorship teams.</div>
-                    </div>
-                    <div class="pub-item">
-                        <div class="pub-title">Sociodemographic disparities in ophthalmological clinical trials</div>
-                        <div class="pub-meta">Luis Filipe Nakayama, William Greig Mitchell, Skyler Shapiro, et al. · <span class="pub-journal">BMJ Open Ophthalmology</span> · 2023</div>
-                        <div class="pub-links">
-                            <a href="https://doi.org/10.1136/bmjophth-2022-001175" class="pub-link" target="_blank" rel="noopener">PDF</a>
-                            <button class="pub-abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
-                        </div>
-                        <div class="pub-abstract">An analysis of sociodemographic representation across ophthalmology clinical trials studying conditions including diabetic retinopathy, myopia, age-related macular degeneration, glaucoma, and keratoconus, identifying enrollment gaps that may limit the generalizability of findings.</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="teaching" class="section">
-                <h2 class="section__title">Teaching</h2>
-                <div class="timeline">
-                    <div class="trow-teach">
-                        <div class="trow__title">Graduate Teaching Assistant</div>
-                        <div class="trow__sub">Duke University · Biostatistics & Bioinformatics</div>
-                        <div class="trow__desc"><strong>BIOSTAT 821</strong> — Software Tools for Data Science · <strong>BIOSTAT 721</strong> — Introduction to Statistical Computing (2025 — Present)</div>
-                    </div>
-                    <div class="trow-teach">
-                        <div class="trow__title">Teaching Assistant</div>
-                        <div class="trow__sub">MIT Lincoln Laboratory · BeaverWorks Summer Institute</div>
-                        <div class="trow__desc"><strong>Medlytics</strong>: Taught Python-based medical data analysis to middle and high school students. Covered data wrangling, EDA, neural networks, efficient computing, and NLP. (Jul – Aug 2022)</div>
-                    </div>
-                    <div class="trow-teach">
-                        <div class="trow__title">Teaching Fellow</div>
-                        <div class="trow__sub">Harvard T.H. Chan School of Public Health</div>
-                        <div class="trow__desc"><strong>BST 209</strong>: Collaborative Data Science in Healthcare. Designed notebook for "datathon" challenge. Coached team of orthopedic surgeons building an adverse event prediction model. (Jul 2022)</div>
-                    </div>
-                </div>
-            </section>
-
-        </div>
-
-        <!-- RIGHT COLUMN: Experience -->
-        <div class="col-right">
             
             <section id="experience" class="section">
                 <h2 class="section__title">Research Experience</h2>
@@ -436,6 +339,75 @@
                                 <span class="skill-tag">Technical Leadership</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="teaching" class="section">
+                <h2 class="section__title">Teaching</h2>
+                <div class="timeline">
+                    <div class="trow-teach">
+                        <div class="trow__title">Graduate Teaching Assistant</div>
+                        <div class="trow__sub">Duke University · Biostatistics & Bioinformatics</div>
+                        <div class="trow__desc"><strong>BIOSTAT 821</strong> — Software Tools for Data Science · <strong>BIOSTAT 721</strong> — Introduction to Statistical Computing (2025 — Present)</div>
+                    </div>
+                    <div class="trow-teach">
+                        <div class="trow__title">Teaching Assistant</div>
+                        <div class="trow__sub">MIT Lincoln Laboratory · BeaverWorks Summer Institute</div>
+                        <div class="trow__desc"><strong>Medlytics</strong>: Taught Python-based medical data analysis to middle and high school students. Covered data wrangling, EDA, neural networks, efficient computing, and NLP. (Jul – Aug 2022)</div>
+                    </div>
+                    <div class="trow-teach">
+                        <div class="trow__title">Teaching Fellow</div>
+                        <div class="trow__sub">Harvard T.H. Chan School of Public Health</div>
+                        <div class="trow__desc"><strong>BST 209</strong>: Collaborative Data Science in Healthcare. Designed notebook for "datathon" challenge. Coached team of orthopedic surgeons building an adverse event prediction model. (Jul 2022)</div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Publications -->
+        <div class="col-right">
+            
+            <section id="publications" class="section">
+                <h2 class="section__title">Publications</h2>
+                <div class="pub-list">
+                    <div class="pub-item">
+                        <div class="pub-title">A pilot study evaluating mid-point vancomycin concentrations to estimate pharmacokinetics and area under the curve: a prospective study</div>
+                        <div class="pub-meta">Aseel AbuSara, Deema Abdelrahman, Wedad Awad, Jennifer Le, Skyler Shapiro, Lama Nazer · <span class="pub-journal">BMC Infectious Diseases</span> · 2025</div>
+                        <div class="pub-links">
+                            <a href="https://doi.org/10.1186/s12879-025-11469-2" class="pub-link" target="_blank" rel="noopener">PDF</a>
+                            <button class="pub-abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                        </div>
+                        <div class="pub-abstract">An evaluation of single mid-interval vancomycin concentrations in critically ill cancer patients, assessing their ability to estimate AUC24, clearance, and volume of distribution compared to Bayesian peak–trough methods, and suggesting a simpler alternative for therapeutic drug monitoring.</div>
+                    </div>
+                    <div class="pub-item">
+                        <div class="pub-title">HLSTransform: Energy-Efficient Llama 2 Inference on FPGAs Via High Level Synthesis</div>
+                        <div class="pub-meta">Andy He*, Darren Key*, Mason Bulling*, Andrew Chang*, Skyler Shapiro*, Everett Lee · <span class="pub-journal">ICML 2024 Workshop</span></div>
+                        <div class="pub-links">
+                            <a href="https://icml.cc/virtual/2024/39603" class="pub-link" target="_blank" rel="noopener">Page</a>
+                            <a href="https://doi.org/10.48550/arXiv.2405.00738" class="pub-link" target="_blank" rel="noopener">PDF</a>
+                            <button class="pub-abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                        </div>
+                        <div class="pub-abstract">HLSTransform is an open-source FPGA accelerator for Llama 2 that leverages High-Level Synthesis and 8-bit quantization to achieve an 8.25x reduction in energy per token compared to a GPU while maintaining 53% of its inference speed, demonstrating a high-efficiency alternative for LLM deployment on edge hardware.</div>
+                    </div>
+                    <div class="pub-item">
+                        <div class="pub-title">Patient diversity and author representation in clinical studies supporting the Surviving Sepsis Campaign guidelines</div>
+                        <div class="pub-meta">Lama Nazer, Aseel Abusara, Batoul Aloran, et al. · <span class="pub-journal">BMC Infectious Diseases</span> · 2023</div>
+                        <div class="pub-links">
+                            <a href="https://doi.org/10.1186/s12879-023-08745-4" class="pub-link" target="_blank" rel="noopener">PDF</a>
+                            <button class="pub-abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                        </div>
+                        <div class="pub-abstract">A systematic review assessing the generalizability of the Surviving Sepsis Campaign 2021 guidelines by examining racial, sex, and geographic diversity of patients enrolled in supporting clinical studies, as well as demographic representation among authorship teams.</div>
+                    </div>
+                    <div class="pub-item">
+                        <div class="pub-title">Sociodemographic disparities in ophthalmological clinical trials</div>
+                        <div class="pub-meta">Luis Filipe Nakayama, William Greig Mitchell, Skyler Shapiro, et al. · <span class="pub-journal">BMJ Open Ophthalmology</span> · 2023</div>
+                        <div class="pub-links">
+                            <a href="https://doi.org/10.1136/bmjophth-2022-001175" class="pub-link" target="_blank" rel="noopener">PDF</a>
+                            <button class="pub-abstract-toggle" onclick="toggleAbstract(this)">Abstract</button>
+                        </div>
+                        <div class="pub-abstract">An analysis of sociodemographic representation across ophthalmology clinical trials studying conditions including diabetic retinopathy, myopia, age-related macular degeneration, glaucoma, and keratoconus, identifying enrollment gaps that may limit the generalizability of findings.</div>
                     </div>
                 </div>
             </section>
